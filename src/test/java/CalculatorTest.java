@@ -5,7 +5,7 @@ import org.testng.annotations.DataProvider;
 
 public class CalculatorTest {
 
-    private static final double MAX_SAFE_INTEGER = 9_007_199_254_740_992.0; // 2^53
+    private static final double MAX_SAFE_INTEGER = 9_007_199_254_740_991.0; // 2^53-1
     // 1ю\. Данные для сложения . Позитивные тесты
     @DataProvider(name = "sumData")
     public Object[][] provideSumData() {
@@ -135,9 +135,7 @@ public class CalculatorTest {
     @DataProvider(name = "negativeSumData")
     public Object[][] negativeSumData() {
         return new Object[][] {
-                { MAX_SAFE_INTEGER -1, 1},
-                {0, MAX_SAFE_INTEGER  },
-                {0, -MAX_SAFE_INTEGER  },
+                { MAX_SAFE_INTEGER, 1},
                 {1, MAX_SAFE_INTEGER  },
                 {10, MAX_SAFE_INTEGER  },
                 { MAX_SAFE_INTEGER-100,MAX_SAFE_INTEGER-1000}
@@ -158,12 +156,9 @@ public class CalculatorTest {
     @DataProvider(name = "negativeSubData")
     public Object[][] negativeSubData() {
         return new Object[][]{
-                {0, MAX_SAFE_INTEGER  },
-                {0, -MAX_SAFE_INTEGER },
-                {-MAX_SAFE_INTEGER, MAX_SAFE_INTEGER },
-                {MAX_SAFE_INTEGER ,0 },
-                { -MAX_SAFE_INTEGER,0 }
-
+                {-1, MAX_SAFE_INTEGER  },
+                {1, -MAX_SAFE_INTEGER },
+                {-MAX_SAFE_INTEGER, MAX_SAFE_INTEGER }
         };
     }
 
