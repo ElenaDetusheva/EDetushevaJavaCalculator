@@ -3,8 +3,6 @@ import org.testng.Assert;
 import org.testng.annotations.Test;
 import org.testng.annotations.DataProvider;
 
-
-
 public class CalculatorTest {
 
     private static final double MAX_SAFE_INTEGER = 9_007_199_254_740_992.0; // 2^53
