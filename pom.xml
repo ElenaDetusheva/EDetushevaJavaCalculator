@@ -5,7 +5,7 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>edet</groupId>
-    <artifactId>EDCalculatorProject</artifactId>
+    <artifactId>EDetushevaJavaCalculator</artifactId>
     <version>1.0-SNAPSHOT</version>
 
     <properties>
