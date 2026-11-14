@@ -2,7 +2,8 @@ target/
 !.mvn/wrapper/maven-wrapper.jar
 !**/src/main/**/target/
 
-
+# IntelliJ IDEA
+.idea/
 
 !**/src/test/**/target/
 .kotlin

@@ -5,7 +5,7 @@ import org.testng.annotations.DataProvider;
 
 public class CalculatorTest {
 
-    private static final double MAX_SAFE_INTEGER = 9_007_199_254_740_991.0; // 2^53-1
+    private static final double MAX_SAFE_INTEGER = 9007199254740991.0; // 2^53-1
     // 1ю\. Данные для сложения . Позитивные тесты
     @DataProvider(name = "sumData")
     public Object[][] provideSumData() {
@@ -47,9 +47,9 @@ public class CalculatorTest {
     public Object[][] provideMultiplyData() {
         return new Object[][] {
                 { 3, 4, 12L },
-                { 2.5, 2, 5L },          // Результат 5.0 без дробной части -> Long
+                { 2.5, 2, 5L },
                 { 2.5, 3, 7.5 },
-                { -5, 0, 0L },           // Проверка защиты от -0.0 -> 0L
+                { -5, 0, 0L },
                 { -4, -3, 12L },
                 { Integer.MAX_VALUE, 2, 4294967294L }
         };
@@ -68,7 +68,7 @@ public class CalculatorTest {
                 { 5, 2, 2.5 },
                 { 7.5, 2.5, 3L },
                 { 5, 0.5, 10L },
-                { 0, -5, 0L },           // Ноль при делении на отрицательное число -> 0L
+                { 0, -5, 0L },
                 { -10, -2, 5L },
                 { -5, 2, -2.5 },
                 { Integer.MIN_VALUE, -1, 2147483648L }
@@ -92,19 +92,22 @@ public class CalculatorTest {
 
     @Test(dataProvider = "zeroDivisors")
     public void testDivideByZero(double a, double b) {
-        Assert.assertThrows(ArithmeticException.class, () -> Calculator.divide(a, b));
+        ArithmeticException exception = Assert.expectThrows(
+                ArithmeticException.class,
+                () -> Calculator.divide(a, b)
+        );
+        Assert.assertEquals(exception.getMessage(), "Деление на ноль запрещено");
     }
 
-    //6. Негативные тесты NaN в параметрах
+    //6. Негативные тесты NaN
 
     @Test
-    public void testNaNInDevision() {
+    public void testNaNInDivision() {
         ArithmeticException exception = Assert.expectThrows(
                 ArithmeticException.class,
                 () -> Calculator.divide(5, Math.sqrt(-4))
         );
         Assert.assertEquals(exception.getMessage(), "Математически неопределенный результат (NaN)");
-
     }
 
     @Test
