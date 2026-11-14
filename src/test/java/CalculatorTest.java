@@ -71,6 +71,7 @@ public class CalculatorTest {
                 { 0, -5, 0L },
                 { -10, -2, 5L },
                 { -5, 2, -2.5 },
+                { 10, 3, 3.3333333333 },
                 { Integer.MIN_VALUE, -1, 2147483648L }
         };
     }
