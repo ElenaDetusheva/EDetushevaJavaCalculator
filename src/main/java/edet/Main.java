@@ -17,7 +17,7 @@ public class Main {
         System.out.println( "10 / 3 = " + Calculator.divide(10, 3));
         System.out.println( "0 + 5 = " + Calculator.sum(0, 5));
         System.out.println( "33 / 3.3 = " + Calculator.divide(33, 3.3));
-        System.out.println("-5 / 0 = " +  Calculator.multiply(-5.0, 0));
+        System.out.println("-5 * 0 = " +  Calculator.multiply(-5.0, 0));
         System.out.println( "0.1 + 0.2 = " + Calculator.sum(0.1, 0.2));
         System.out.println("0.1/ 0.01 = " +  Calculator.divide(0.1, 0.01));
         System.out.println( "0.1 * 10 = " + Calculator.multiply(0.1, 10));
