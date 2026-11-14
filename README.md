@@ -53,7 +53,7 @@
 
 1. Клонируйте репозиторий на локальную машину:
    ```bash
-   git clone <ссылка-на-ваш-репозиторий>
+   git clone https://github.com/ElenaDetusheva/EDetushevaJavaCalculator.git
    cd <папка-проекта>
    ```
 
@@ -61,3 +61,4 @@
    ```bash
    mvn clean test
    ```
+   или в панели Maven кнопка test
