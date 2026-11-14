@@ -14,6 +14,7 @@ public class Main {
         System.out.println( "5.4 / 3 = " + Calculator.divide(5.4, 3));
         System.out.println( "5.423 - 3 = " + Calculator.sub(5.423, 3));
         System.out.println( "0.33 / 3.3 = " + Calculator.divide(0.33, 3.3));
+        System.out.println( "10 / 3 = " + Calculator.divide(10, 3));
         System.out.println( "0 + 5 = " + Calculator.sum(0, 5));
         System.out.println( "33 / 3.3 = " + Calculator.divide(33, 3.3));
         System.out.println("-5 / 0 = " +  Calculator.multiply(-5.0, 0));
