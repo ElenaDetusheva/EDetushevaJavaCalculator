@@ -104,8 +104,8 @@ public class CalculatorTest {
 
     @Test
     public void testNaNInDivision() {
-        ArithmeticException exception = Assert.expectThrows(
-                ArithmeticException.class,
+        IllegalArgumentException exception = Assert.expectThrows(
+                IllegalArgumentException.class,
                 () -> Calculator.divide(5, Math.sqrt(-4))
         );
         Assert.assertEquals(exception.getMessage(), "Математически неопределенный результат (NaN)");
@@ -113,8 +113,8 @@ public class CalculatorTest {
 
     @Test
     public void testNaNInSum() {
-        ArithmeticException exception = Assert.expectThrows(
-                ArithmeticException.class, () -> Calculator.sum(5, Math.sqrt(-4))
+        IllegalArgumentException exception = Assert.expectThrows(
+                IllegalArgumentException.class, () -> Calculator.sum(5, Math.sqrt(-4))
         );
 
         Assert.assertEquals( exception.getMessage(), "Математически неопределенный результат (NaN)" );
@@ -122,15 +122,15 @@ public class CalculatorTest {
 
     @Test
     public void testNaNInSub() {
-        ArithmeticException exception = Assert.expectThrows(
-                ArithmeticException.class, () -> Calculator.sub(5, Math.sqrt(-4)));
+        IllegalArgumentException exception = Assert.expectThrows(
+                IllegalArgumentException.class, () -> Calculator.sub(5, Math.sqrt(-4)));
         Assert.assertEquals( exception.getMessage(), "Математически неопределенный результат (NaN)" );
     }
 
     @Test
     public void testNaNInMultiply() {
-        ArithmeticException exception = Assert.expectThrows(
-                ArithmeticException.class, () -> Calculator.multiply(5, Math.sqrt(-4)));
+        IllegalArgumentException exception = Assert.expectThrows(
+                IllegalArgumentException.class, () -> Calculator.multiply(5, Math.sqrt(-4)));
         Assert.assertEquals( exception.getMessage(), "Математически неопределенный результат (NaN)" );
     }
 

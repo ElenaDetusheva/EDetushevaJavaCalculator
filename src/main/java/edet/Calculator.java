@@ -25,8 +25,9 @@ public class Calculator {
     }
 
     private static Number formatResult(double result) {
+
         if (Double.isNaN(result)) {
-            throw new ArithmeticException("Математически неопределенный результат (NaN)");
+            throw new IllegalArgumentException("Математически неопределенный результат (NaN)");
         }
         if (Math.abs(result) > MAX_SAFE_INTEGER) {
             throw new ArithmeticException("Результат выходит за пределы точных вычислений");
