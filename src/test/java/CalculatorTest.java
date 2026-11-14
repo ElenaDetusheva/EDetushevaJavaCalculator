@@ -6,7 +6,7 @@ import org.testng.annotations.DataProvider;
 public class CalculatorTest {
 
     private static final double MAX_SAFE_INTEGER = 9007199254740991.0; // 2^53-1
-    // 1ю\. Данные для сложения . Позитивные тесты
+    // 1. Данные для сложения . Позитивные тесты
     @DataProvider(name = "sumData")
     public Object[][] provideSumData() {
         return new Object[][] {
